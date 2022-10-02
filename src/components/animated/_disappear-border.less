@@ -1,0 +1,89 @@
+.disappearingAnimation() {
+  outline-color: rgba(71, 126, 232, 0);
+  outline-offset: 25px;
+}
+
+.darkMode() {
+  color: @white !important;
+}
+
+.colorButton(@color) {
+  outline-color: @color;
+  color: @color !important;
+}
+
+.disappear-border-btn {
+  border: none;
+  background-color: transparent;
+  font-family: Helvetica;
+  letter-spacing: 0.4em;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: 3px solid;
+  outline-offset: 10px;
+  transition: all 600ms cubic-bezier(0.2, 0, 0, 0.8);
+
+  &.blue-btn {
+    .colorButton(@blue);
+  }
+
+  &.pink-btn {
+    .colorButton(@pink);
+  }
+
+  &.red-btn {
+    .colorButton(@red);
+  }
+
+  &.green-btn {
+    .colorButton(@green);
+  }
+
+  &.yellow-btn {
+    .colorButton(@yellow);
+  }
+
+  &.orange-btn {
+    .colorButton(@orange);
+  }
+
+  &.purple-btn {
+    .colorButton(@purple);
+  }
+
+  &.black-btn {
+    .colorButton(@black);
+  }
+
+  &.white-btn {
+    .colorButton(@whiteBorder);
+    color: @darkText !important;
+  }
+}
+
+&:hover,
+&.animated {
+  .disappearingAnimation();
+}
+
+.disappear-border-btn.rounded-btn {
+  &:hover {
+    &:before {
+      border-radius: 25px;
+    }
+    &:after {
+      border-radius: 25px;
+    }
+  }
+}
+
+//dark mode support
+&.white-btn,
+&.black-btn {
+  [data-theme="dark"] &,
+  &.dark-mode {
+    .darkMode();
+  }
+}

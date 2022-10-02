@@ -157,6 +157,11 @@
                 "label": "Diagonal Background on Hover",
                 "classes": "diag-btn"
             },
+	    {
+                "type": "disappearing-border",
+                "label": "Disappearing Border on Hover",
+                "classes": "disappear-border-btn"
+            },
             {
                 "type": "expanding",
                 "label": "Expanding Border",
